@@ -313,3 +313,24 @@ end
 ```
 
 #### case
+
+- case \- endの間に条件値による分岐を記載していく
+ - whenの後に条件値を設定する
+ - ダブルクォートで囲めば文字列になる
+
+```
+num = gets.to_i
+
+case num
+when  1
+    print "1番です\n"
+when  2
+    print "2番です\n"
+when  3
+    print "3番です\n"
+when "4"
+    print "四番です\n"
+else
+    print "どの条件とも合致しませんでした\n"
+end
+```
