@@ -285,3 +285,31 @@ puts ${array}.empty?
 #### 比較演算子
 
 あとでまとめる
+
+### 2018/05/05_4日目_1時間
+
+#### 繰り返し
+
+```
+# ブロックを繰り返しに渡せる
+## |i|がブロックパラメータ
+## イマイチわかっていないので実際に書いて動きを見る
+[式] do |i|
+    処理内容
+end
+
+# until
+## １行ずつ読み込む
+## ${file}.eofはend of file(ファイルの終端かどうか)を調べる
+until ${file}.eof
+    print ${file}.gets
+end
+
+# for
+## cshellのforeachやJavaの拡張for文と同じ動き
+for i in [1,2,3,4,5]
+    puts i*2
+end
+```
+
+#### case
