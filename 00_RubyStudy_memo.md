@@ -334,3 +334,113 @@ else
     print "どの条件とも合致しませんでした\n"
 end
 ```
+
+### 2018/05/06_5日目_1時間
+
+#### 例外処理
+
+- 例外処理はbeginブロックで行う
+  - begin => Javaでいうtry文
+  - rescue => Javaでいうcache文
+
+書き方
+
+```
+begin
+	File.open("test.txt",encoding: "utf-8") do |f|
+    # test.txtファイルが存在すれば1行読み込む
+		print f.gets
+end
+# e変数にはエラーメッセージが格納される
+rescue => e
+	warn "#{e.class} / #{e.message}"
+end
+```
+
+#### 時刻や日付の扱いについて
+
+- Time.nowメソッドで現在日時を取得
+- time.yearなどで表示する要素を指定（今回は年のみ）
+- .*strftimeメソッドで表示形式の指定* を出来る
+  - time.strftim("%Y/%m/%d") => YYYY/MM/SS形式で表示
+
+記載例
+
+```
+# 現在時刻の取得
+time = Time.now
+
+# 年だけ表示
+puts time.year
+
+# YYYY/MM/DD 英語曜日 HH:MM
+puts time.strftime("%Y/%m/%d %A %H:%M")
+puts "\n"
+# YYYY/MM/DD 英語曜日(省略) HH:MM
+puts time.strftime("%Y/%m/%d %a %H:%M")
+
+puts time.strftime("%Y/%m/%d %a %I:%M %p")
+```
+
+実行結果
+
+```
+2018
+2018/05/06 Sunday 13:23
+
+2018/05/06 Sun 13:23
+2018/05/06 Sun 01:23 PM
+```
+
+#### ハッシュ（連想配列）
+
+- ハッシュはKey Valueの組み合わせ
+- 複数の値を扱うことが出来る
+
+```
+# Key => Value,
+# 名前 => 値
+# 区切りはカンマを使うので注意
+books = {
+    "Ruby入門" => 1000,
+    "hashについて" => 500,
+    "hoge本" => 300
+}
+
+# Ruby入門Keyに紐付けられている1000Valueが表示される
+puts books["Ruby入門"]
+
+# ハッシュに要素の追加
+books["プログラムの本"] = 1300
+
+puts books["プログラムの本"]
+
+# eachメソッドはkeyとvalueのセットをdoブロックで
+# 順番に取り出せるのでdoブロックで繰り返し処理する
+books.each do |key,val|
+    puts "#{key},#{val}円"
+end
+```
+
+#### 演習をやってみる
+
+ここまででRubyの単元が一旦終わるので演習として何個かプログラムを作成してみる。
+
+- FizzBuzz問題
+  - 1〜100までを順番に表示
+  - 3で割り切れるときはFizzと表示
+  - 5で割り切れるときはBuzzと表示
+  - 3と5で割り切れるときはFizzBuzzと表示
+
+作成したプログラムは13_rensyu_fizzbuzz.rbを確認
+
+- うるう年判定問題
+  - 2000年〜3000年までを順番に表示
+  - うるう年だった場合は「YYYY年 うるう年」と表示
+  - うるう年ではない場合は「YYYY年 平年」と表示
+
+
+- うるう年の定義
+- [※どの年がうるう年になるの？ | 国立天文台(NAOJ)](https://www.nao.ac.jp/faq/a0306.html)
+  1. 西暦年号が4で割り切れる年をうるう年とする
+  2. ただし1.の例外として、西暦年号が100で割り切れて400で割り切れない年は平年とする
