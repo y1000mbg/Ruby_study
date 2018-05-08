@@ -1,0 +1,28 @@
+<!-- doctypeでhtml5形式と指定 -->
+<!doctype html>
+<html>
+    <head>
+        <!-- headは概要などを記載する(titleなど) -->
+        <title>はじめてのjQuery</title>
+
+        <!--- bxsliderの表示関係 --->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+            $('.slider').bxSlider();
+            });
+        </script>
+    </head>
+    <body>
+        <!-- bodyは実際のページの内容を記載する -->
+<ul class="slider">
+  <li><img src="img/pic1.jpg" title="キャプション1"></li>
+  <li><img src="img/pic2.jpg" title="キャプション2"></li>
+  <li><img src="img/pic3.jpg" title="キャプション3"></li>
+</ul>
+
+    </body>
+</html>
