@@ -1,9 +1,18 @@
-# Ruby on Railsの勉強メモ
+# Webアプリ作成の勉強メモ
 
 ## 概要
 
 udemyでRuby on Railsについての教材を買ってみた。
 学習のメモを記載する。
+内容としては下記の通りでフロント側の技術も学んだ。
+
+- Ruby
+- Ruby on Rails
+- HTML5
+- JavaScript
+- jQuery
+- Bootstarp
+
 
 ## 環境について
 
