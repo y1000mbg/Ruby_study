@@ -4,7 +4,7 @@
 
 udemyでRuby on Railsについての教材を買ってみた。
 学習のメモを記載する。
-内容としては下記の通りでフロント側の技術も学んだ。
+内容としては下記の通りでフロント側の技術も軽く学んだ。
 
 - Ruby
 - Ruby on Rails
@@ -117,6 +117,7 @@ cd ${projectname}
 
 ## Gemfileの書き換え
 ## JavaScript Runtimeが入ってないとrailsサーバーがスタートできない
+cp -p Gemfile Gemfile.org
 sed -i -e s/"# gem 'therubyracer'"/"gem 'therubyracer'"/ Gemfile
 
 ## JavaScript Runtimeを導入
@@ -344,7 +345,7 @@ else
 end
 ```
 
-### 2018/05/06_5日目_1時間
+### 2018/05/06_5日目_2時間
 
 #### 例外処理
 
@@ -453,3 +454,65 @@ end
 - [※どの年がうるう年になるの？ | 国立天文台(NAOJ)](https://www.nao.ac.jp/faq/a0306.html)
   1. 西暦年号が4で割り切れる年をうるう年とする
   2. ただし1.の例外として、西暦年号が100で割り切れて400で割り切れない年は平年とする
+
+### 2018/05/08_6日目_2時間
+
+### フロントエンド全般
+
+講座に則りHTML5やCSSなど以下の要素を学ぶ。
+
+- HTML5
+- CSS
+
+#### HTML5
+
+- doctypeで形式を指定する
+- その他は古いHTMLバージョンと差異は今の所見られない。
+
+```
+<!-- doctypeでhtml5形式と指定 -->
+<!doctype html>
+<html>
+    <head>
+    <!-- headは概要などを記載する(titleなど) -->
+    <title>はじめてのHTML5</title>
+    </head>
+    <body>
+    <!-- bodyは実際のページの内容を記載する -->
+    <h1>HelloWorld</h1>
+
+    古いHTMLとどの辺が違うのか楽しみです。
+    </body>
+</html>
+```
+
+### css
+
+- HTMLの配色や文字サイズなどデザイン面を担当
+- css3が現行バージョン
+  - 基本的に以前の書き方が通用する認識
+
+記載例
+
+```
+h1 {
+    color: red ;
+}
+
+```
+
+#### JavaScript
+
+- クライアント側（Webブラウザ)で動作する
+- 近年はnode.jsと呼ばれるサーバーサイドで動作するものが登場。非同期動作をさせることが可能。
+
+#### jQuery
+
+- JavaScriptを使って動きのあるページを作れるライブラリ
+- 画像スライドなどが簡単に作れる
+
+#### Bootstrap
+
+- twitter社が公開しているWebデザイン用のライブラリ
+- ある程度テンプレートが用意されておりそれをcssとして適用するとデザインの良いページが作れる
+- xxx.min.js や xxx.min.cssは改行コードなどを省いたファイルを指定すると読み込みが早い
